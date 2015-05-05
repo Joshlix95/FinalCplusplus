@@ -85,3 +85,58 @@ void triangle()
 
     cout << "\n\tArea: " << area << endl;
 }
+
+//=================================================================================================================
+
+// p. 452 ex. 14
+// Lottery Application
+
+#include <iostream>
+#include <cstdlib>
+#include <iomanip>
+
+using namespace std;
+
+
+int main()
+{
+    const int SIZE = 5;
+    int user[SIZE],
+        lottery[SIZE];
+
+    // random lottery array
+    for (int i = 0; i < SIZE; i++)
+    {
+        lottery[i] = 1 + rand()%5;
+        cout << lottery[i];
+    }
+
+
+    // user enters digits
+    for (int i =0; i < SIZE; i++)
+    {
+        cout << "Enter a digit: ";
+        cin >> user[i];
+    }
+
+    // compare arrays
+    int count = 0;
+
+    for (int i = 0; i < SIZE; i++)
+    {
+        if (lottery[i] == user[i])
+        {
+            cout << "Match at position " << i+1 << endl;
+            count +=1;
+        }
+
+    }
+
+    if (count == 0)
+        cout << "No match was found!" << endl;
+
+    return 0;
+}
+
+//=================================================================================================================
+
